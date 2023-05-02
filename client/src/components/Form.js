@@ -17,7 +17,7 @@ const Form = () => {
     setShowCity(cityName);
     if (cityName.length) {
       axios
-        .post("http://localhost:3001/city", { city: cityName })
+        .post(`${process.env.REACT_APP_MY_URL}/city`, { city: cityName })
         .then((resp) => {
           if (resp.status === 200) {
             setIsValid(true);
