@@ -22,7 +22,7 @@ function App() {
           setShowCity("");
           let icon_url;
           axios
-            .post("http://localhost:3001/", { longitude, latitude })
+            .post(`${process.env.REACT_APP_MY_URL}/`, { longitude, latitude })
             .then((response) => {
               if (response.status === 200) {
                 setTempDetails(response.data);
